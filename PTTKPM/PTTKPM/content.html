@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Content</title>
+    <link rel="stylesheet" type="text/css" href="Project.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./vendor/js/Magnific-Popup-master/magnific-popup.css" />
+    <script src="https://kit.fontawesome.com/54a12c09af.js" crossorigin="anonymous"></script>
+    <script src="Project.js"></script>
+    <link rel="stylesheet" href="./style1.css" class="css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        }
+        
+        #head {
+            width: 100%;
+            height: 30px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #afterhead {
+            width: 100%;
+            height: 75px;
+            border-bottom: #989898 solid 2px;
+            margin-bottom: 40px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .a {
+            display: block;
+            color: white;
+            position: relative;
+            z-index: 0;
+        }
+        
+        .a:hover {
+            color: black;
+        }
+        
+        .a:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background-color: white;
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .a:hover:before {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+        
+        #menu {
+            clear: both;
+            padding-top: 18px;
+            border: #989898 solid 2px;
+            height: 60px;
+            background-color: white;
+            box-shadow: 0px 0px 5px 5px grey;
+        }
+        
+        .card {
+            float: left;
+            width: 270px;
+            height: 480px;
+            margin-right: 20px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: whitesmoke;
+            transition: 0.7s ease;
+            opacity: 1;
+        }
+        .card img{
+          width: 100%;
+          height: 360px !important;
+        }
+        
+        .page-wrapper {
+            min-height: 100%;
+        }
+        
+        
+        footer .social-media:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+        footer .social-popup-icon {
+            color: #fff;
+        }
+        
+        footer .footer-bottom {
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            color: #aaa;
+        }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #ffffff;
+            z-index: 12;
+        }
+        
+        .nav {
+            padding: 3px 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .brand-logo {
+            height: 60px;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search {
+            width: 500px;
+            display: flex;
+        }
+        
+        #search-box {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #d1d1d1;
+            text-transform: capitalize;
+            background: none;
+            color: #a9a9a9;
+            outline: none;
+        }
+        
+        .search-btn {
+            width: 20%;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #383838;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 15px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        #search-box::placeholder {
+            color: #a9a9a9;
+        }
+        
+        .nav-items a {
+            margin-left: 20px;
+        }
+        
+        .nav-items a img {
+            width: 30px;
+        }
+        
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 7px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+        
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: 0.5s;
+            font-size: 15px;
+        }
+        
+        .link:hover {
+            opacity: 1;
+        }
+        
+        .card div {
+            opacity: 1;
+        }
+        
+        .card:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+      
+        #menu a:hover {
+            color: gray;
+            transform: scale(1.3);
+        }
+        
+        .sp:hover {
+            background-color: gray;
+        }
+        
+        .sp {
+            margin: 20px 15px;
+            font-size: 15px;
+            font: bold;
+            border: solid 2px black;
+            border-radius: 50%;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0px 0px 5px 5px grey;
+        }
+        
+        #around {
+            border: #000000 solid 2px;
+            height: 1550px;
+            padding: 40px 20px;
+            margin-bottom: 50px;
+            background-color: white;
+        }
+        
+        @media all and (max-width: 1500px) {
+            body {
+                width: 1500px;
+            }
+            .navbar {
+                width: 1500px;
+            }
+            #menu {
+                width: 1025px;
+            }
+            #around {
+                width: 1025px;
+                height: 1700px;
+            }
+        }
+        
+        @media all and (max-width: 1000px) {
+            body {
+                width: 1200px;
+            }
+            .navbar {
+                width: 1200px;
+            }
+            #menu {
+                width: 700px;
+            }
+            #around {
+                width: 700px;
+                height: 2520px;
+            }
+            #head {
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            createProducts();
+            pageAll();
+            createAdmin();
+            hideTK();
+        };
+    </script>
+    <form>
+        <div id="logbox_0" style="
+          position: fixed;
+          opacity: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-color: black;
+        "></div>
+    </form>
+    <form>
+        <div id="logbox">
+            <div style="border-bottom: #cdcdcd solid 1px">
+                <a href="#" onclick="out();"><input type="button" style="
+                padding: 0 3px;
+                float: right;
+                font-size: 30px;
+                background: #ffffff;
+                border: #ffffff;
+                cursor: pointer;
+              " class="material-icons" value="backspace" /></a>
+                <h2>TÀI KHOẢN CỦA TÔI</h2>
+            </div>
+            <div style="padding: 40px; border-bottom: #cdcdcd solid 1px">
+                <div id="ttdn">
+                    <div style="font-weight: bold">TÔI CHƯA CÓ TÀI KHOẢN</div>
+                    <p>Login*<br /><input type="text" value="" id="tendn" /></p>
+                    <p>Password*<br /><input type="password" value="" id="mk" /></p>
+                    <div style="margin-right: 25px; padding-top: 2px">
+                        <a href="#" style="color: black" onclick="checkttdn_1()"><u>Đăng nhập với tư cách là quản trị viên</u></a
+              >
+            </div>
+            <a
+              href="#"
+              style="
+                cursor: pointer;
+                font-size: 20px;
+                background-color: black;
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+                display: block;
+                margin-top: 20px;
+              "
+              onclick="checkttdn()"
+              >Đăng nhập</a
+            >
+          </div>
+        </div>
+        <div style="padding: 30px 40px">
+          <div style="font-weight: bold">TÔI CHƯA CÓ TÀI KHOẢN</div>
+          <div style="margin-top: 20px; margin-bottom: 50px">
+            Tận hưởng các lợi ích bổ sung và trải nghiệm phong phú hơn bằng cách tạo
+             tài khoản
+          </div>
+          <div style="text-align: center">
+            <a
+              href="#"
+              style="
+                cursor: pointer;
+                font-size: 20px;
+                background-color: black;
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+                display: block;
+              "
+              onclick="CreateAccountBoard()"
+              >Tạo tài khoản</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+    <form>
+      <div id="logbox_2">
+        <div style="border-bottom: #cdcdcd solid 1px">
+          <a href="#" onclick="out_2();"
+            ><input
+              type="button"
+              style="
+                padding: 0 3px;
+                float: right;
+                font-size: 30px;
+                background: #ffffff;
+                border: #ffffff;
+                cursor: pointer;
+              "
+              class="material-icons"
+              value="backspace"
+          /></a>
+                        <h2 style="text-align: center; padding: 40px">TRỞ THÀNH MỘT THÀNH VIÊN </h2>
+                    </div>
+                    <div style="padding: 20px; text-align: center">
+                        <p style="padding: 20px 0px">
+                          Tạo hồ sơ Thành viên của bạn và có quyền truy cập đầu tiên vào những sản phẩm, nguồn cảm hứng và cộng đồng tốt nhất của chúng tôi.
+                        </p>
+                        <input id="username" type="text" placeholder="tên người dùng" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="password" type="password" placeholder="mật khẩu" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="passwordrp" type="password" placeholder="Nhập lại mật khẩu" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="fullname" type="text" placeholder="Tên đầy đủ" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="email" type="text" placeholder="Địa chỉ email" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="phone" type="text" placeholder="Số điện thoại" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                        <input id="address" type="text" placeholder="Địa chỉ hiện tại của bạn " style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    </div>
+                    <div style="text-align: center">
+                        <a href="#" style="
+              cursor: pointer;
+              font-size: 20px;
+              background-color: black;
+              color: white;
+              padding: 10px 30px;
+              text-align: center;
+              margin: 30px;
+            " onclick="createNewAccount()">Đăng ký</a
+          >
+          <div style="margin-top: 30px">
+            Bạn đã là thành viên chưa<a
+              style="
+                cursor: pointer;
+                padding: 30px 5px;
+                text-decoration: underline;
+              "
+              onclick="dangnhap()"
+              >Đăng nhập</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="wrapper">
+      <nav class="navbar">
+        <div class="nav">
+          <img scr="TTLG.png" class="brand-logo" alt="" />
+          <div class="nav-items">
+            <img
+              src="TTLG.png"
+              style="position: absolute; height: 100px; left: 2%"
+            />
+            <div class="search">
+              <input
+                type="text"
+                id="search-box"
+                placeholder="searching..."
+                onkeyup="searchFunction()"
+              />
+              <button style="width: 120px;" class="search-btn">tìm kiếm</button>
+            </div>
+
+            <a href="#" onclick="checkGioHang()"
+              ><img src="cart.png" alt=""
+            /></a>
+                        <a id="login" href="#"><img src="user.png" alt="" onclick="dangnhap()" /></a>
+                        <div id="tkkh" style="
+                height: 50%;
+                color: black;
+                margin-left: 20px;
+                margin-right: -50px;
+                font-weight: bold;
+              "></div>
+                    </div>
+                </div>
+                <div>
+                    <a id="dxbox" onclick="dangxuat()" href="#" style="
+              display: none;
+              line-height: 15px;
+              padding: 10px 10px;
+              background-color: gray;
+              text-align: center;
+              position: absolute;
+              right: 100px;
+              top: 50%;
+              border-radius: 20px;
+            "><b>Đăng xuất</b></a
+          >
+        </div>
+        <div>
+          <a
+            href="#"
+            style="
+              line-height: 15px;
+              padding: 10px 10px;
+              background-color: gray;
+              text-align: center;
+              position: absolute;
+              right: 100px;
+              top: 86%;
+              display: none;
+            "
+            >Đăng xuất</a
+          >
+        </div>
+
+        <ul class="links-container" style="border-bottom: 1px solid #aaa;">
+          <li class="link-item">
+            <a
+              href="DOAN.html"
+              class="link"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >TRANG CHỦ</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="#"
+              class="link"
+              onclick="gender('woman')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >NỮ</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="#"
+              class="link"
+              onclick="gender('man')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >NAM</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="#"
+              class="link"
+              onclick="gender('kid')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >TRẺ EM</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div style="margin-bottom: 120px; padding-top: 50px">
+        <div>
+          <a
+            href="DOAN.html"
+            style="
+              float: left;
+              padding-left: 100px;
+              padding-top: 10px;
+              padding-right: 10px;
+              padding-bottom: 10px;
+              font-size: 30px;
+            "
+            class="a"
+            id="home"
+            ><b>TRANG CHỦ</b></a
+          >
+        </div>
+      </div>
+      <div style="padding: 83px">
+        <div id="menu">
+          <b>
+            <div id="gdr" style="float: right; margin-right: 20px">
+              GIỚI TÍNH:<select id="slt2" onchange="searchF('slt2')">
+                <option value="" selected>ALL</option>
+                <option value="male">NAM</option>
+                <option value="female">NỮ</option>
+                <option value="kid">TRẺ EM</option>
+              </select>
+            </div>
+            <div id="brd" style="float: right; margin-right: 20px">
+              Thể Loại:<select id="slt1" onchange="searchF('slt1')">
+                <option value="" selected>ALL</option>
+                <option value="ao">Áo-Đầm</option>
+                <option value="quan">Quần-Chân Váy</option>
+                <option value="set">SET</option>
+              </select>
+            </div>
+            <div id="pri" style="float: right; margin-right: 20px">
+              GIÁ:<select id="slt3" onchange="searchF('slt3')">
+                <option value="" selected>ALL</option>
+                <option value="110">1000000đ</option>
+                <option value="110200">1000000 ~ 2000000 đ</option>
+                <option value="200">2000000đ</option>
+              </select>
+            </div>
+          </b>
+        </div>
+        <div id="around">
+          <div id="ndu"></div>
+        </div>
+      </div>
+      <form
+        id="trang"
+        style="
+          clear: both;
+          padding-bottom: 30px;
+          margin-bottom: 20px;
+          text-align: center;
+        "
+      ></form>
+<!--------------------------app-container------------------------------------->
+      <section class="app-container">
+        <p>Tải ứng dụng TTLG</p>
+        <div class="app-google">
+            <img src="https://logos-download.com/wp-content/uploads/2016/06/Download_on_the_App_Store_logo.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png">
+        </div>
+        <p>Nhận thông báo TTLG</p>
+        <input type="email" placeholder="Nhập email của bạn...">
+    </section>
+<!-----------------------------footer--------------------------->
+    <div class="footer-top">
+        <li><a href=""><img src="https://pubcdn.ivymoda.com/ivy2/images/img-congthuong.png" alt=""></a></li>
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Tuyển dụng</a></li>
+        <li><a href="">Giới thiệu</a></li>
+        <li class="app">
+            <a href=""><img src="https://pubcdn.ivymoda.com/ivy2/images/ic_fb.svg" alt=""></a>
+            <a href=""><img src="https://pubcdn.ivymoda.com/ivy2/images/ic_instagram.svg" alt=""></a>
+            <a href=""><img src="https://pubcdn.ivymoda.com/ivy2/images/ic_ytb.svg" alt=""></a>
+        </li>
+    </div>
+    <div class="footer-center">Công ty Cổ phần Một Mình Tôi với số đăng ký kinh doanh: 0905092886 <br>
+    Địa chỉ đăng ký: 284, Quang Trung, Hà Đông, Hà Nội <br>
+    Đặt hàng online: <b>0905 092 886</b> . <br>
+    </div>
+    <div class="footer-bottom">
+        @TTLG All rights reserved
+    </div>       
+</body>
+
+</html>

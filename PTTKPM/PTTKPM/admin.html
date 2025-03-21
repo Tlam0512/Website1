@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="Project.js"></script>
+<script>
+function CountCustomer(){
+  var c=JSON.parse(localStorage.getItem("user"));
+  document.getElementById("customers").innerHTML=c.length-1+"</br><span>Customers</span>";
+}
+function CountOrder(){
+  var c=JSON.parse(localStorage.getItem("HDKH"));
+  document.getElementById("orders").innerHTML=c.length+"<br/><span>Orders</span>";
+}
+function CountProduct(){
+  var c=JSON.parse(localStorage.getItem("products"));
+  document.getElementById("products").innerHTML=c.length+"<br/><span>Products</span>";
+}
+var mid_3;
+function Quantity(temp,temp_1){
+            var s=0;
+            var arr=JSON.parse(localStorage.getItem('HDKH'));
+            for(var i=0;i<arr.length;i++) 
+                if(arr[i].IDhd==temp_1){
+                  for(var j=0;j<arr[i].cthoadon.length;j++){
+                    if(temp==arr[i].cthoadon[j].product) {
+                      s++;
+                      mid_3=arr[i].cthoadon[j].product;
+                    }
+                  }
+                  break;
+                }
+            return s; 
+  }
+function CountSold(){
+  var c=JSON.parse(localStorage.getItem("HDKH"));
+  var sum=0;
+  for(var i=0;i<c.length;i++)
+    for(var j=0;j<c[i].cthoadon.length;j++)
+      if(c[i].cthoadon[j].product==mid_3) continue;
+      else{
+        sum+=Quantity(c[i].cthoadon[j].product,c[i].IDhd);
+      }
+  document.getElementById("soldproducts").innerHTML=sum+"<br/><span>Products Sold</span>";
+}
+</script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="admin.css" type="text/css" />
+    <script src="Project.js"></script>
+</head>
+
+<body>
+  <script>
+    window.onload=function(){
+      CountCustomer();
+      CountOrder();
+      CountProduct();
+      CountSold();
+    }
+  </script>
+    <div id="nav" class="sidenav">
+        <a href="DOAN.html"><p class="logo">TTLG SHOP</p></a>
+        <a href="admin.html" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Dashboard</a
+      >
+      <a href="user.html" class="icon-a"
+        ><i class="fa fa-users icons"></i>&nbsp;&nbsp;QUẢN LÍ NGƯỜI DÙNG</a
+      >
+      <a href="sanpham.html" class="icon-a"
+        ><i class="fa fa-list icons"></i>&nbsp;&nbsp;QUẢN LÍ SẢN PHẨM</a
+      >
+      <a href="donhang.html" class="icon-a"
+        ><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;QUẢN LÍ ĐƠN HÀNG</a
+      >
+    </div>
+    <div id="shows">
+    <div id="main">
+      <div class="head">
+        <div class="col-div-6">
+          <span  onclick="invinbox()"
+            style="font-size: 30px; cursor: pointer; color: white"
+            class="nav2"
+            >&#9776;Bảng điều khiển</span
+          >
+        </div>
+
+        <div class="col-div-6">
+            
+          <div class="profile">
+            <img src="user.png" class="pro-img" />
+            <p class="profile">TTLG<span>DESIGN</span></p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p id="customers"></p>
+          <i class="fa fa-users box-icon"></i>
+        </div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p id="products"></p>
+          <i class="fas fa-list box-icon"></i>
+        </div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p id="orders"></p>
+          <i class="fa fa-shopping-bag box-icon"></i>
+        </div>
+      </div>
+      <div class="col-div-3">
+        <div class="box">
+          <p id="soldproducts"></p>
+          <i class="fa fa-tasks box-icon"></i>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <br />
+      <div class="col-div-8">
+        <div class="box-8">
+          <div class="content-box">
+            <p>Người quản lý<span>Xem tất cả</span></p>
+            <br />
+            <table>
+              <tr>
+                <th>Tên</th>
+                <th>Liên hệ</th>
+                <th>Quốc gia</th>
+              </tr>
+              <tr>
+                <th>Hoàng Phú Trọng</th>
+                <th>0905092886</th>
+                <th>Viet Nam</th>
+              </tr>
+              <tr>
+                <th>Đỗ Thế Toàn</th>
+                <th>0905092886</th>
+                <th>Viet Nam</th>
+              </tr>
+              <tr>
+                <th>Trần Tùng Lâm</th>
+                <th>0905092886</th>
+                <th>Viet Nam</th>
+              </tr>
+              <tr>
+                <th>Nguyễn Minh Trường Giang</th>
+                <th>0905092886</th>
+                <th>Viet Nam</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-div-4">
+        <div class="box-4">
+          <div class="content-box">
+            <p>Tổng doanh thu<span>Xem tất cả</span></p>
+
+            <div class="circle-wrap">
+            <div class="circle">
+              <div class="mask full">
+                <div class="fill"></div>
+              </div>
+              <div class="mask half">
+                <div class="fill"></div>
+              </div>
+              <div class="inside-circle">70%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+div{
+    display: flex;
+}
+div p{
+    margin-right: 20px;
+}
+nav{
+    background-color:#787777;
+
+}

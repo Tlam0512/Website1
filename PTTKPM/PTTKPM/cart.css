@@ -1,0 +1,95 @@
+.small-container {
+    margin: 80px 200px;
+    display: flex;
+}
+#dssp{
+    width: 70%;
+    border-right: 2px solid #ddd;
+}
+table {
+    border-spacing: 2px;
+    padding-right: 5px;
+}
+td button{
+    font-size: 12px;
+    width: 90px;
+    color: white;
+    background: black;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+}
+td button:hover{
+    background-color:#ddd;
+    color: black;
+}
+.total-price{
+    margin-left: 10px;
+    width: 30%;
+}
+.total-price th{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+.total-price td{
+    padding: 10px 0;
+}
+.total-price tr td:last-child{
+    text-align: right;
+}
+#totalHoaDon{
+    border-collapse: collapse;
+}
+#totalHoaDon tr:last-child td{
+    border-bottom: 2px solid #acaaaa;
+}
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#dssp th {
+    text-align: left;
+    padding: 10px 5px 30px 5px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 2px solid black;
+    font-weight: normal;
+    text-align: center;
+}
+
+#dssp td {
+    text-align: center;
+    padding: 10px 5px;
+    border-bottom: 2px solid black;
+}
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: red;
+}
+td img {
+    width: 80px;
+    height: 80px;
+}
+.total-price table {
+    width: 100%;
+    max-width: 450px;
+}
+.check {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.check table {
+    width: 100%;
+    max-width: 450px;
+}
